@@ -1,0 +1,5 @@
+com\example\CatalogRepository.class
+com\example\Application.class
+com\example\CatalogResource.class
+com\example\CatalogService.class
+com\example\Product.class
