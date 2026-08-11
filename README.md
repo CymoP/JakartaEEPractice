@@ -24,6 +24,12 @@ asadmin deploy target\jakarta-practice.war
 Invoke-WebRequest http://localhost:8080/jakarta-practice/api/catalog
 ```
 
+## Get Product by ID
+
+```
+Invoke-WebRequest http://localhost:8080/jakarta-practice/api/catalog/1
+```
+
 ## Add Product
 
 ```
@@ -32,6 +38,14 @@ Invoke-WebRequest `
   -Method POST `
   -ContentType "application/json" `
   -Body '{"name":"Pokemon Pack","price":4.29}'
+```
+
+## Remove Product
+
+```
+Invoke-WebRequest `
+  -Uri "http://localhost:8080/jakarta-practice/api/catalog/1" `
+  -Method DELETE
 ```
 
 ## TODO

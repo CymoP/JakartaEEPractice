@@ -16,8 +16,17 @@ public class CatalogService {
         return repository.findAll();
     }
 
+    public Product getProduct(Long id) {
+        return repository.findById(id);
+    }
+
     @Transactional
     public void addProduct(Product product) {
         repository.save(product);
+    }
+
+    @Transactional
+    public void removeProduct(Long id) {
+        repository.removeById(id);
     }
 }

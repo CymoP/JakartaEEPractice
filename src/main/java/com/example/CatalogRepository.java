@@ -18,7 +18,18 @@ public class CatalogRepository {
                 .getResultList();
     }
 
+    public Product findById(Long id) {
+    return entityManager.find(Product.class, id);
+    }
+
     public void save(Product product) {
         entityManager.persist(product);
+    }
+
+    public void removeById(Long id) {
+        Product product = findById(id);
+        if (product != null) {
+            entityManager.remove(product);
+        }
     }
 }
