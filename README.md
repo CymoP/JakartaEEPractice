@@ -14,15 +14,24 @@ asadmin stop-domain
 asadmin start-domain
 asadmin ping-connection-pool catalogPool
 mvn clean package
-asadmin undeploy jakarta-practice   
+asadmin undeploy jakarta-practice
 asadmin deploy target\jakarta-practice.war
 ```
 
-## Manual Test
+## Get Products
 
 ```
 Invoke-WebRequest http://localhost:8080/jakarta-practice/api/catalog
-asadmin ping-connection-pool catalogPool
+```
+
+## Add Product
+
+```
+Invoke-WebRequest `
+  -Uri "http://localhost:8080/jakarta-practice/api/catalog" `
+  -Method POST `
+  -ContentType "application/json" `
+  -Body '{"name":"Pokemon Pack","price":4.29}'
 ```
 
 ## TODO

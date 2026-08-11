@@ -17,4 +17,8 @@ public class CatalogRepository {
                 .createQuery("SELECT p FROM Product p", Product.class)
                 .getResultList();
     }
+
+    public void save(Product product) {
+        entityManager.persist(product);
+    }
 }

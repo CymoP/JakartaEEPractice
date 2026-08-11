@@ -16,8 +16,8 @@ public class CatalogService {
         return repository.findAll();
     }
 
-    // @Transactional
-    // public void addProduct(Product product) {
-    //     repository.save(product);
-    // }
+    @Transactional
+    public void addProduct(Product product) {
+        repository.save(product);
+    }
 }
